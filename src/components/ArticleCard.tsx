@@ -3,15 +3,11 @@ import { CategoryBadge } from "./CategoryBadge";
 import { SUBJECTS } from "@/lib/data";
 import type { Article } from "@/lib/types";
 
-interface ArticleCardProps {
-  article: Article;
-}
-
-export function ArticleCard({ article }: ArticleCardProps) {
+export function ArticleCard({ article }: { article: Article }) {
   const subject = SUBJECTS[article.subject];
 
   return (
-    <article className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+    <article className="relative bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
       {article.imageUrl ? (
         <img
           src={article.imageUrl}
@@ -31,7 +27,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
         <h3 className="text-base font-semibold text-gray-900 leading-snug mb-2">
           <Link
             href={`/artigos/${article.slug}`}
-            className="hover:text-blue-700 focus:outline-none focus:underline focus:text-blue-700"
+            className="hover:text-blue-700 focus:outline-none focus:underline focus:text-blue-700 after:absolute after:inset-0 after:content-['']"
           >
             {article.title}
           </Link>
