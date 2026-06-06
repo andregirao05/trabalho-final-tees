@@ -44,6 +44,10 @@ export default function NovoArtigoPage() {
           <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 mb-1">URL da imagem</label>
           <input id="imageUrl" name="imageUrl" type="url" placeholder="https://..." className={inputClass} />
         </div>
+        <div>
+          <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">Conteúdo do artigo</label>
+          <textarea id="content" name="content" rows={12} placeholder="Escreva o conteúdo completo do artigo aqui. Separe os parágrafos com uma linha em branco." className={`${inputClass} resize-y`} />
+        </div>
         <div className="flex items-center gap-2">
           <input id="featured" name="featured" type="checkbox" className="h-4 w-4 rounded border-gray-300 focus:ring-2 focus:ring-blue-700" />
           <label htmlFor="featured" className="text-sm font-medium text-gray-700">Exibir como destaque na home</label>

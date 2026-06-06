@@ -23,6 +23,7 @@ export const getTools = (): StudyTool[] => read("tools.json");
 export const getTips = (): VestibularTip[] => read("tips.json");
 
 export const getArticleById = (id: string) => getArticles().find((a) => a.id === id);
+export const getArticleBySlug = (slug: string) => getArticles().find((a) => a.slug === slug);
 export const getVideoById = (id: string) => getVideos().find((v) => v.id === id);
 export const getToolById = (id: string) => getTools().find((t) => t.id === id);
 export const getTipById = (id: string) => getTips().find((t) => t.id === id);

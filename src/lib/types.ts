@@ -30,6 +30,7 @@ export interface Article {
   slug: string;
   featured?: boolean;
   imageUrl?: string;
+  content?: string;
 }
 
 export interface Video {

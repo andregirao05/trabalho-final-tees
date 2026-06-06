@@ -33,6 +33,7 @@ export async function createArticle(formData: FormData) {
   const title = formData.get("title") as string;
   const articles = getArticles();
   const imageUrl = (formData.get("imageUrl") as string) || undefined;
+  const content = (formData.get("content") as string) || undefined;
   articles.push({
     id: newId(),
     title,
@@ -44,6 +45,7 @@ export async function createArticle(formData: FormData) {
     slug: toSlug(title),
     featured: formData.get("featured") === "on",
     ...(imageUrl ? { imageUrl } : {}),
+    ...(content ? { content } : {}),
   });
   write("articles.json", articles);
   revalidatePath("/");
@@ -58,6 +60,7 @@ export async function updateArticle(formData: FormData) {
   if (idx !== -1) {
     const title = formData.get("title") as string;
     const imageUrl = (formData.get("imageUrl") as string) || undefined;
+    const content = (formData.get("content") as string) || undefined;
     articles[idx] = {
       ...articles[idx],
       title,
@@ -68,6 +71,7 @@ export async function updateArticle(formData: FormData) {
       featured: formData.get("featured") === "on",
       slug: toSlug(title),
       imageUrl: imageUrl ?? articles[idx].imageUrl,
+      content: content ?? articles[idx].content,
     };
     write("articles.json", articles);
     revalidatePath("/");
