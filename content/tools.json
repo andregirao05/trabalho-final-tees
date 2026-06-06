@@ -5,7 +5,7 @@
     "description": "Divida seus estudos em blocos de 25 minutos com pausas curtas para manter o foco e evitar o cansaço mental.",
     "icon": "⏱️",
     "category": "Produtividade",
-    "url": "#",
+    "url": "https://pomofocus.io",
     "createdAt": "2026-05-10T12:00:00.000Z"
   },
   {
@@ -14,7 +14,7 @@
     "description": "Organize ideias e conceitos de forma visual para facilitar a compreensão e a memorização de conteúdos complexos.",
     "icon": "🗺️",
     "category": "Organização",
-    "url": "#",
+    "url": "https://www.mindmeister.com/pt",
     "createdAt": "2026-05-08T12:00:00.000Z"
   },
   {
@@ -23,7 +23,7 @@
     "description": "Crie e revise cartões de memória usando o método da repetição espaçada para fixar fórmulas, datas e conceitos.",
     "icon": "🃏",
     "category": "Memorização",
-    "url": "#",
+    "url": "https://ankiweb.net",
     "createdAt": "2026-05-05T12:00:00.000Z"
   },
   {
@@ -32,7 +32,7 @@
     "description": "Pratique com questões no estilo ENEM e receba um relatório detalhado do seu desempenho por área do conhecimento.",
     "icon": "📊",
     "category": "Avaliação",
-    "url": "#",
+    "url": "https://www.qconcursos.com/questoes-do-enem",
     "createdAt": "2026-05-01T12:00:00.000Z"
   },
   {
@@ -41,7 +41,7 @@
     "description": "Calcule sua nota e descubra em quais cursos e universidades você pode ingressar com base na sua pontuação do ENEM.",
     "icon": "🧮",
     "category": "Planejamento",
-    "url": "#",
+    "url": "https://sisu.mec.gov.br",
     "createdAt": "2026-04-28T12:00:00.000Z"
   },
   {
@@ -50,7 +50,7 @@
     "description": "Acesse resumos, apostilas e materiais de estudo organizados por matéria, nível e tema para complementar seus estudos.",
     "icon": "📚",
     "category": "Recursos",
-    "url": "#",
+    "url": "https://www.todamateria.com.br",
     "createdAt": "2026-04-25T12:00:00.000Z"
   }
 ]

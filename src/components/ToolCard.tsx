@@ -1,12 +1,10 @@
 import type { StudyTool } from "@/lib/types";
 
-interface ToolCardProps {
-  tool: StudyTool;
-}
+export function ToolCard({ tool }: { tool: StudyTool }) {
+  const hasUrl = tool.url && tool.url !== "#";
 
-export function ToolCard({ tool }: ToolCardProps) {
-  return (
-    <article className="bg-white rounded-lg border border-gray-200 p-5 hover:shadow-md hover:border-blue-200 transition-all flex gap-4">
+  const content = (
+    <>
       <div
         className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
         aria-hidden="true"
@@ -21,7 +19,32 @@ export function ToolCard({ tool }: ToolCardProps) {
           </span>
         </div>
         <p className="text-xs text-gray-600 leading-relaxed">{tool.description}</p>
+        {hasUrl && (
+          <span className="inline-block mt-2 text-xs text-blue-700 font-medium" aria-hidden="true">
+            Acessar ferramenta →
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  if (hasUrl) {
+    return (
+      <a
+        href={tool.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${tool.name} — abre em nova aba`}
+        className="bg-white rounded-lg border border-gray-200 p-5 hover:shadow-md hover:border-blue-200 transition-all flex gap-4 focus:outline-none focus:ring-2 focus:ring-blue-700"
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <article className="bg-white rounded-lg border border-gray-200 p-5 flex gap-4">
+      {content}
     </article>
   );
 }
