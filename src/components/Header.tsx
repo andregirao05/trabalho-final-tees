@@ -39,6 +39,8 @@ export function Header() {
             <form
               role="search"
               aria-label="Buscar conteúdo"
+              action="/busca"
+              method="GET"
               className="hidden md:flex items-center flex-1 max-w-md"
             >
               <label htmlFor="search-desktop" className="sr-only">
@@ -46,6 +48,7 @@ export function Header() {
               </label>
               <input
                 id="search-desktop"
+                name="q"
                 type="search"
                 placeholder="Buscar artigos, matérias..."
                 className="w-full rounded-l-md px-4 py-2 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -115,12 +118,13 @@ export function Header() {
         className={`md:hidden bg-white border-b border-gray-200 shadow-sm ${isMenuOpen ? "block" : "hidden"}`}
       >
         <div className="px-4 py-3">
-          <form role="search" aria-label="Buscar conteúdo">
+          <form role="search" aria-label="Buscar conteúdo" action="/busca" method="GET">
             <label htmlFor="search-mobile" className="sr-only">
               Buscar artigos e matérias
             </label>
             <input
               id="search-mobile"
+              name="q"
               type="search"
               placeholder="Buscar..."
               className="w-full rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-700"
