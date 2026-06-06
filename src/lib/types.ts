@@ -31,6 +31,7 @@ export interface Article {
   featured?: boolean;
   imageUrl?: string;
   content?: string;
+  createdAt?: string;
 }
 
 export interface Video {
@@ -42,6 +43,7 @@ export interface Video {
   views: string;
   youtubeId?: string;
   description?: string;
+  createdAt?: string;
 }
 
 export interface StudyTool {
@@ -51,6 +53,7 @@ export interface StudyTool {
   icon: string;
   category: string;
   url: string;
+  createdAt?: string;
 }
 
 export interface VestibularTip {
@@ -58,4 +61,5 @@ export interface VestibularTip {
   title: string;
   content: string;
   icon: string;
+  createdAt?: string;
 }

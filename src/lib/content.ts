@@ -17,10 +17,16 @@ export function write<T>(file: string, data: T[]): void {
   fs.writeFileSync(path.join(dir, file), JSON.stringify(data, null, 2), "utf-8");
 }
 
-export const getArticles = (): Article[] => read("articles.json");
-export const getVideos = (): Video[] => read("videos.json");
-export const getTools = (): StudyTool[] => read("tools.json");
-export const getTips = (): VestibularTip[] => read("tips.json");
+function byDate<T extends { createdAt?: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) =>
+    (b.createdAt ?? "").localeCompare(a.createdAt ?? "")
+  );
+}
+
+export const getArticles = (): Article[] => byDate(read("articles.json"));
+export const getVideos = (): Video[] => byDate(read("videos.json"));
+export const getTools = (): StudyTool[] => byDate(read("tools.json"));
+export const getTips = (): VestibularTip[] => byDate(read("tips.json"));
 
 export const getArticleById = (id: string) => getArticles().find((a) => a.id === id);
 export const getArticleBySlug = (slug: string) => getArticles().find((a) => a.slug === slug);

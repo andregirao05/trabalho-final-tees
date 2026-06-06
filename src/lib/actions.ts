@@ -58,6 +58,7 @@ export async function createArticle(formData: FormData) {
     readTime: Number(formData.get("readTime")) || 5,
     slug: toSlug(title),
     featured: formData.get("featured") === "on",
+    createdAt: new Date().toISOString(),
     ...(imageUrl ? { imageUrl } : {}),
     ...(content ? { content } : {}),
   });
@@ -114,6 +115,7 @@ export async function createVideo(formData: FormData) {
     teacher: formData.get("teacher") as string,
     duration: formData.get("duration") as string,
     views: "0",
+    createdAt: new Date().toISOString(),
     ...(youtubeId ? { youtubeId } : {}),
     ...(description ? { description } : {}),
   });
@@ -162,6 +164,7 @@ export async function createTip(formData: FormData) {
     title: formData.get("title") as string,
     content: formData.get("content") as string,
     icon: (formData.get("icon") as string) || "💡",
+    createdAt: new Date().toISOString(),
   });
   write("tips.json", tips);
   revalidatePath("/");
@@ -205,6 +208,7 @@ export async function createTool(formData: FormData) {
     icon: (formData.get("icon") as string) || "🔧",
     category: formData.get("category") as string,
     url: (formData.get("url") as string) || "#",
+    createdAt: new Date().toISOString(),
   });
   write("tools.json", tools);
   revalidatePath("/");

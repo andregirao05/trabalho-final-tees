@@ -3,36 +3,42 @@
     "id": "1",
     "title": "Monte um Cronograma de Estudos",
     "icon": "📅",
-    "content": "Organize seu tempo distribuindo as matérias ao longo da semana, priorizando aquelas com maior peso no ENEM. Reserve horários fixos e respeite as pausas para não se sobrecarregar."
+    "content": "Organize seu tempo distribuindo as matérias ao longo da semana, priorizando aquelas com maior peso no ENEM. Reserve horários fixos e respeite as pausas para não se sobrecarregar.",
+    "createdAt": "2026-05-10T12:00:00.000Z"
   },
   {
     "id": "2",
     "title": "Pratique com Provas Anteriores",
     "icon": "📝",
-    "content": "Resolver provas dos anos anteriores é uma das melhores formas de entender o estilo das questões, identificar pontos fracos e ganhar velocidade na resolução."
+    "content": "Resolver provas dos anos anteriores é uma das melhores formas de entender o estilo das questões, identificar pontos fracos e ganhar velocidade na resolução.",
+    "createdAt": "2026-05-08T12:00:00.000Z"
   },
   {
     "id": "3",
     "title": "Domine a Redação",
     "icon": "✍️",
-    "content": "A redação vale 20% da nota do ENEM. Treine escrever textos dissertativo-argumentativos semanalmente e peça feedback. Atenção à estrutura: introdução, desenvolvimento e conclusão."
+    "content": "A redação vale 20% da nota do ENEM. Treine escrever textos dissertativo-argumentativos semanalmente e peça feedback. Atenção à estrutura: introdução, desenvolvimento e conclusão.",
+    "createdAt": "2026-05-05T12:00:00.000Z"
   },
   {
     "id": "4",
     "title": "Cuide da Saúde",
     "icon": "💪",
-    "content": "Sono de qualidade, alimentação equilibrada e atividade física são essenciais para manter o foco e a memória. Não abra mão do descanso nas vésperas da prova."
+    "content": "Sono de qualidade, alimentação equilibrada e atividade física são essenciais para manter o foco e a memória. Não abra mão do descanso nas vésperas da prova.",
+    "createdAt": "2026-05-01T12:00:00.000Z"
   },
   {
     "id": "5",
     "title": "Revise os Conteúdos de Alto Impacto",
     "icon": "🎯",
-    "content": "Foque nos tópicos que aparecem com mais frequência nas provas. Use a Matriz de Referência do ENEM como guia e priorize o que rende mais pontos."
+    "content": "Foque nos tópicos que aparecem com mais frequência nas provas. Use a Matriz de Referência do ENEM como guia e priorize o que rende mais pontos.",
+    "createdAt": "2026-04-28T12:00:00.000Z"
   },
   {
     "id": "6",
     "title": "Use Técnicas de Memorização",
     "icon": "🧠",
-    "content": "Mapas mentais, flashcards e a técnica Pomodoro são ferramentas poderosas para fixar conteúdo, manter a concentração e tornar o estudo mais eficiente."
+    "content": "Mapas mentais, flashcards e a técnica Pomodoro são ferramentas poderosas para fixar conteúdo, manter a concentração e tornar o estudo mais eficiente.",
+    "createdAt": "2026-04-25T12:00:00.000Z"
   }
 ]
