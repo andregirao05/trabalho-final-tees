@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { vestibularTips } from "@/lib/data";
+import { getTips } from "@/lib/content";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Vestibular",
@@ -15,6 +17,7 @@ const enem = [
 ];
 
 export default function VestibularPage() {
+  const vestibularTips = getTips();
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       {/* Page header */}

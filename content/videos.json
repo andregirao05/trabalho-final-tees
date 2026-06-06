@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Funções do 1º e 2º Grau — Resolução Comentada",
+    "subject": "matematica",
+    "teacher": "Prof. Carlos Souza",
+    "duration": "18:42",
+    "views": "12,4 mil"
+  },
+  {
+    "id": "2",
+    "title": "Como Fazer uma Boa Redação para o ENEM",
+    "subject": "portugues",
+    "teacher": "Prof.ª Ana Lima",
+    "duration": "25:10",
+    "views": "34,1 mil"
+  },
+  {
+    "id": "3",
+    "title": "Revolução Francesa — Resumo Completo",
+    "subject": "historia",
+    "teacher": "Prof. Roberto Farias",
+    "duration": "22:35",
+    "views": "18,7 mil"
+  },
+  {
+    "id": "4",
+    "title": "Sistema Digestório Humano",
+    "subject": "biologia",
+    "teacher": "Prof.ª Maria Santos",
+    "duration": "15:20",
+    "views": "9,3 mil"
+  },
+  {
+    "id": "5",
+    "title": "Eletrostática: Cargas e Campo Elétrico",
+    "subject": "fisica",
+    "teacher": "Prof. André Alves",
+    "duration": "30:15",
+    "views": "7,8 mil"
+  },
+  {
+    "id": "6",
+    "title": "Tabela Periódica: Grupos e Períodos",
+    "subject": "quimica",
+    "teacher": "Prof.ª Fernanda Costa",
+    "duration": "20:45",
+    "views": "11,2 mil"
+  }
+]

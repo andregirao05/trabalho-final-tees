@@ -3,8 +3,11 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { VideoCard } from "@/components/VideoCard";
 import { ToolCard } from "@/components/ToolCard";
-import { articles, videos, vestibularTips, studyTools, SUBJECTS } from "@/lib/data";
+import { getArticles, getVideos, getTips, getTools } from "@/lib/content";
+import { SUBJECTS } from "@/lib/data";
 import type { Subject } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "EduBrasil — Aprenda qualquer matéria, quando quiser",
@@ -16,6 +19,10 @@ const subjectOrder: Subject[] = [
 ];
 
 export default function HomePage() {
+  const articles = getArticles();
+  const videos = getVideos();
+  const vestibularTips = getTips();
+  const studyTools = getTools();
   const featuredArticles = articles.filter((a) => a.featured).slice(0, 3);
 
   return (

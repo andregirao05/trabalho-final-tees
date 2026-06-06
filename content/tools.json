@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "Timer Pomodoro",
+    "description": "Divida seus estudos em blocos de 25 minutos com pausas curtas para manter o foco e evitar o cansaço mental.",
+    "icon": "⏱️",
+    "category": "Produtividade",
+    "url": "#"
+  },
+  {
+    "id": "2",
+    "name": "Mapas Mentais",
+    "description": "Organize ideias e conceitos de forma visual para facilitar a compreensão e a memorização de conteúdos complexos.",
+    "icon": "🗺️",
+    "category": "Organização",
+    "url": "#"
+  },
+  {
+    "id": "3",
+    "name": "Flashcards Digitais",
+    "description": "Crie e revise cartões de memória usando o método da repetição espaçada para fixar fórmulas, datas e conceitos.",
+    "icon": "🃏",
+    "category": "Memorização",
+    "url": "#"
+  },
+  {
+    "id": "4",
+    "name": "Simulado ENEM",
+    "description": "Pratique com questões no estilo ENEM e receba um relatório detalhado do seu desempenho por área do conhecimento.",
+    "icon": "📊",
+    "category": "Avaliação",
+    "url": "#"
+  },
+  {
+    "id": "5",
+    "name": "Calculadora SISU",
+    "description": "Calcule sua nota e descubra em quais cursos e universidades você pode ingressar com base na sua pontuação do ENEM.",
+    "icon": "🧮",
+    "category": "Planejamento",
+    "url": "#"
+  },
+  {
+    "id": "6",
+    "name": "Biblioteca Virtual",
+    "description": "Acesse resumos, apostilas e materiais de estudo organizados por matéria, nível e tema para complementar seus estudos.",
+    "icon": "📚",
+    "category": "Recursos",
+    "url": "#"
+  }
+]

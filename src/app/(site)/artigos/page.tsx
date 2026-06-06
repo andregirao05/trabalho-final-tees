@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
-import { articles, SUBJECTS } from "@/lib/data";
+import { getArticles } from "@/lib/content";
+import { SUBJECTS } from "@/lib/data";
 import type { Subject } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Artigos",
@@ -11,6 +14,7 @@ export const metadata: Metadata = {
 const subjects = Object.entries(SUBJECTS) as [Subject, typeof SUBJECTS[Subject]][];
 
 export default function ArtigosPage() {
+  const articles = getArticles();
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       {/* Page header */}

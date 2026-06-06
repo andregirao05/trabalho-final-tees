@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ToolCard } from "@/components/ToolCard";
-import { studyTools } from "@/lib/data";
+import { getTools } from "@/lib/content";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Ferramentas de Estudo",
@@ -8,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function FerramentasPage() {
+  const studyTools = getTools();
   const categories = [...new Set(studyTools.map((t) => t.category))];
 
   return (

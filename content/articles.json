@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "title": "Equação do Segundo Grau: Fórmula de Bhaskara e Exercícios",
+    "excerpt": "Aprenda a resolver equações do segundo grau usando a fórmula de Bhaskara com exemplos práticos e exercícios resolvidos passo a passo.",
+    "subject": "matematica",
+    "author": "Prof. Carlos Souza",
+    "date": "15 mai. 2026",
+    "readTime": 8,
+    "slug": "equacao-segundo-grau-bhaskara",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Concordância Verbal: Regras Essenciais com Exemplos",
+    "excerpt": "Domine as principais regras de concordância verbal do português e evite os erros mais comuns na escrita e na fala.",
+    "subject": "portugues",
+    "author": "Prof.ª Ana Lima",
+    "date": "12 mai. 2026",
+    "readTime": 6,
+    "slug": "concordancia-verbal-regras-exemplos",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Primeira Guerra Mundial: Causas, Desenvolvimento e Consequências",
+    "excerpt": "Entenda os fatores que desencadearam a Primeira Guerra Mundial, os principais conflitos e as transformações geopolíticas que se seguiram.",
+    "subject": "historia",
+    "author": "Prof. Roberto Farias",
+    "date": "10 mai. 2026",
+    "readTime": 12,
+    "slug": "primeira-guerra-mundial",
+    "featured": true
+  },
+  {
+    "id": "4",
+    "title": "Fotossíntese: Como as Plantas Produzem Energia",
+    "excerpt": "Compreenda o processo de fotossíntese, os pigmentos envolvidos, as fases clara e escura e a importância desse processo para a vida na Terra.",
+    "subject": "biologia",
+    "author": "Prof.ª Maria Santos",
+    "date": "08 mai. 2026",
+    "readTime": 7,
+    "slug": "fotossintese-como-plantas-produzem-energia",
+    "featured": false
+  },
+  {
+    "id": "5",
+    "title": "Climas do Brasil: Características e Distribuição",
+    "excerpt": "Conheça os diferentes tipos de clima no Brasil, suas características regionais e como influenciam a biodiversidade e a economia do país.",
+    "subject": "geografia",
+    "author": "Prof. Paulo Mendes",
+    "date": "05 mai. 2026",
+    "readTime": 9,
+    "slug": "climas-do-brasil",
+    "featured": false
+  },
+  {
+    "id": "6",
+    "title": "Ligações Químicas: Iônica, Covalente e Metálica",
+    "excerpt": "Aprenda como os átomos se unem para formar moléculas e compostos, explorando os três tipos principais de ligações químicas.",
+    "subject": "quimica",
+    "author": "Prof.ª Fernanda Costa",
+    "date": "03 mai. 2026",
+    "readTime": 10,
+    "slug": "ligacoes-quimicas",
+    "featured": false
+  },
+  {
+    "id": "7",
+    "title": "Leis de Newton: Os Três Princípios da Mecânica",
+    "excerpt": "Explore as três leis do movimento de Newton, compreenda seus fundamentos e veja como aplicá-las na resolução de problemas de física.",
+    "subject": "fisica",
+    "author": "Prof. André Alves",
+    "date": "01 mai. 2026",
+    "readTime": 8,
+    "slug": "leis-de-newton",
+    "featured": false
+  },
+  {
+    "id": "8",
+    "title": "Romantismo Brasileiro: Características e Autores",
+    "excerpt": "Conheça o movimento romântico no Brasil, seus principais autores, obras e as características que marcaram essa escola literária.",
+    "subject": "literatura",
+    "author": "Prof.ª Juliana Ramos",
+    "date": "28 abr. 2026",
+    "readTime": 11,
+    "slug": "romantismo-brasileiro",
+    "featured": false
+  },
+  {
+    "id": "9",
+    "title": "Iluminismo: Pensamento e Influência na Modernidade",
+    "excerpt": "Entenda os principais ideais do Iluminismo, os filósofos que moldaram esse movimento e sua influência nas revoluções e na sociedade moderna.",
+    "subject": "filosofia",
+    "author": "Prof. Marcos Oliveira",
+    "date": "25 abr. 2026",
+    "readTime": 9,
+    "slug": "iluminismo-pensamento-modernidade",
+    "featured": false
+  },
+  {
+    "id": "10",
+    "title": "Estratificação Social: Conceitos e Tipos",
+    "excerpt": "Compreenda como a sociedade se organiza em camadas, os critérios de estratificação e as implicações das desigualdades sociais.",
+    "subject": "sociologia",
+    "author": "Prof.ª Carla Vieira",
+    "date": "22 abr. 2026",
+    "readTime": 7,
+    "slug": "estratificacao-social",
+    "featured": false
+  }
+]

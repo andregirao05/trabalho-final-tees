@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { VideoCard } from "@/components/VideoCard";
-import { videos, SUBJECTS } from "@/lib/data";
+import { getVideos } from "@/lib/content";
+import { SUBJECTS } from "@/lib/data";
 import type { Subject } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Vídeo Aulas",
@@ -11,6 +14,7 @@ export const metadata: Metadata = {
 const subjects = Object.entries(SUBJECTS) as [Subject, typeof SUBJECTS[Subject]][];
 
 export default function VideoAulasPage() {
+  const videos = getVideos();
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       <div className="bg-white border-b border-gray-200">
