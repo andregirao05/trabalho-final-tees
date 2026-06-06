@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getArticleBySlug } from "@/lib/content";
 import { CategoryBadge } from "@/components/CategoryBadge";
+import { MarkdownContent } from "@/components/MarkdownContent";
 
 export const dynamic = "force-dynamic";
 
@@ -9,10 +10,6 @@ export default async function ArtigoPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) notFound();
-
-  const paragraphs = article.content
-    ? article.content.split(/\n\n+/).filter(Boolean)
-    : [];
 
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
@@ -53,14 +50,8 @@ export default async function ArtigoPage({ params }: { params: Promise<{ slug: s
             </div>
           </header>
 
-          {paragraphs.length > 0 ? (
-            <div className="prose prose-gray max-w-none">
-              {paragraphs.map((paragraph, i) => (
-                <p key={i} className="text-gray-800 leading-relaxed mb-4">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+          {article.content ? (
+            <MarkdownContent content={article.content} />
           ) : (
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
               <p className="text-yellow-800 text-sm">
