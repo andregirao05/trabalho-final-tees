@@ -105,9 +105,11 @@ type ActiveForm = "none" | "image" | "link";
 export function ArticleContentEditor({
   defaultValue,
   name = "content",
+  label = "Conteúdo do artigo",
 }: {
   defaultValue?: string;
   name?: string;
+  label?: string;
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [activeForm, setActiveForm] = useState<ActiveForm>("none");
@@ -175,7 +177,7 @@ export function ArticleContentEditor({
   return (
     <div>
       <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
-        Conteúdo do artigo{" "}
+        {label}{" "}
         <span className="text-gray-400 font-normal">(Markdown)</span>
       </label>
 

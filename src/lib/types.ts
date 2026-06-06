@@ -40,6 +40,8 @@ export interface Video {
   duration: string;
   teacher: string;
   views: string;
+  youtubeId?: string;
+  description?: string;
 }
 
 export interface StudyTool {

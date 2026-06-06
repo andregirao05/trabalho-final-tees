@@ -9,6 +9,20 @@ function newId(): string {
   return crypto.randomUUID();
 }
 
+function extractYoutubeId(input: string): string | undefined {
+  const s = input.trim();
+  if (!s) return undefined;
+  // already a bare ID (no slashes or dots)
+  if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
+  try {
+    const url = new URL(s);
+    if (url.hostname === "youtu.be") return url.pathname.slice(1) || undefined;
+    return url.searchParams.get("v") ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function toSlug(text: string): string {
   return text
     .toLowerCase()
@@ -91,6 +105,8 @@ export async function deleteArticle(formData: FormData) {
 
 export async function createVideo(formData: FormData) {
   const videos = getVideos();
+  const youtubeId = extractYoutubeId(formData.get("youtubeUrl") as string);
+  const description = (formData.get("description") as string) || undefined;
   videos.push({
     id: newId(),
     title: formData.get("title") as string,
@@ -98,6 +114,8 @@ export async function createVideo(formData: FormData) {
     teacher: formData.get("teacher") as string,
     duration: formData.get("duration") as string,
     views: "0",
+    ...(youtubeId ? { youtubeId } : {}),
+    ...(description ? { description } : {}),
   });
   write("videos.json", videos);
   revalidatePath("/");
@@ -110,12 +128,16 @@ export async function updateVideo(formData: FormData) {
   const videos = getVideos();
   const idx = videos.findIndex((v) => v.id === id);
   if (idx !== -1) {
+    const youtubeId = extractYoutubeId(formData.get("youtubeUrl") as string);
+    const description = (formData.get("description") as string) || undefined;
     videos[idx] = {
       ...videos[idx],
       title: formData.get("title") as string,
       subject: formData.get("subject") as Subject,
       teacher: formData.get("teacher") as string,
       duration: formData.get("duration") as string,
+      youtubeId: youtubeId ?? videos[idx].youtubeId,
+      description: description ?? videos[idx].description,
     };
     write("videos.json", videos);
     revalidatePath("/");

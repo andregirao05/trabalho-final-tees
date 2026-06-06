@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SUBJECTS } from "@/lib/data";
 import { createVideo } from "@/lib/actions";
+import { ArticleContentEditor } from "@/components/admin/ArticleContentEditor";
 
 export const metadata = { title: "Novo Vídeo — Admin" };
 
@@ -36,6 +37,11 @@ export default function NovoVideoPage() {
           <label htmlFor="teacher" className="block text-sm font-medium text-gray-700 mb-1">Professor <span aria-hidden="true" className="text-red-500">*</span></label>
           <input id="teacher" name="teacher" type="text" required className={inputClass} />
         </div>
+        <div>
+          <label htmlFor="youtubeUrl" className="block text-sm font-medium text-gray-700 mb-1">URL ou ID do YouTube</label>
+          <input id="youtubeUrl" name="youtubeUrl" type="text" placeholder="https://youtube.com/watch?v=... ou dQw4w9WgXcQ" className={inputClass} />
+        </div>
+        <ArticleContentEditor name="description" label="Descrição do vídeo" />
         <div className="flex gap-3 pt-2">
           <button type="submit" className="bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2">Salvar vídeo</button>
           <Link href="/admin/videos" className="border border-gray-300 text-gray-700 px-5 py-2 rounded-md text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Cancelar</Link>

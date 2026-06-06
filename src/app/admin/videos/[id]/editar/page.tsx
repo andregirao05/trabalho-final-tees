@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getVideoById } from "@/lib/content";
 import { SUBJECTS } from "@/lib/data";
 import { updateVideo } from "@/lib/actions";
+import { ArticleContentEditor } from "@/components/admin/ArticleContentEditor";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Editar Vídeo — Admin" };
@@ -44,6 +45,11 @@ export default async function EditarVideoPage({ params }: { params: Promise<{ id
           <label htmlFor="teacher" className="block text-sm font-medium text-gray-700 mb-1">Professor <span aria-hidden="true" className="text-red-500">*</span></label>
           <input id="teacher" name="teacher" type="text" required defaultValue={video.teacher} className={inputClass} />
         </div>
+        <div>
+          <label htmlFor="youtubeUrl" className="block text-sm font-medium text-gray-700 mb-1">URL ou ID do YouTube</label>
+          <input id="youtubeUrl" name="youtubeUrl" type="text" defaultValue={video.youtubeId} placeholder="https://youtube.com/watch?v=... ou dQw4w9WgXcQ" className={inputClass} />
+        </div>
+        <ArticleContentEditor name="description" label="Descrição do vídeo" defaultValue={video.description} />
         <div className="flex gap-3 pt-2">
           <button type="submit" className="bg-blue-700 text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2">Salvar alterações</button>
           <Link href="/admin/videos" className="border border-gray-300 text-gray-700 px-5 py-2 rounded-md text-sm font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Cancelar</Link>
