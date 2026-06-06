@@ -11,6 +11,7 @@ export const SUBJECTS: Record<Subject, SubjectInfo> = {
   literatura: { label: "Literatura", badge: "bg-pink-700 text-white", bg: "bg-pink-50", text: "text-pink-700", border: "border-pink-700", emoji: "📚" },
   filosofia: { label: "Filosofia", badge: "bg-indigo-700 text-white", bg: "bg-indigo-50", text: "text-indigo-700", border: "border-indigo-700", emoji: "💭" },
   sociologia: { label: "Sociologia", badge: "bg-cyan-700 text-white", bg: "bg-cyan-50", text: "text-cyan-700", border: "border-cyan-700", emoji: "👥" },
+  vestibular: { label: "Vestibular", badge: "bg-rose-700 text-white", bg: "bg-rose-50", text: "text-rose-700", border: "border-rose-700", emoji: "🎓" },
 };
 
 export const articles: Article[] = [

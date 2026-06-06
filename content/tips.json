@@ -40,5 +40,26 @@
     "icon": "🧠",
     "content": "Mapas mentais, flashcards e a técnica Pomodoro são ferramentas poderosas para fixar conteúdo, manter a concentração e tornar o estudo mais eficiente.",
     "createdAt": "2026-04-25T12:00:00.000Z"
+  },
+  {
+    "id": "tip-psc-etapas",
+    "title": "No PSC da UFAM, Cada Etapa Conta",
+    "icon": "🏛️",
+    "content": "O PSC da UFAM avalia você nas 1ª, 2ª e 3ª séries do ensino médio. A nota final é uma média ponderada com pesos 1, 2 e 3 para cada etapa. Não negligencie as primeiras fases — elas têm impacto real no seu resultado final.",
+    "createdAt": "2026-06-05T10:00:00.000Z"
+  },
+  {
+    "id": "tip-sis-inscreva-cedo",
+    "title": "Inscreva-se no SIS da UEA desde o 1º Ano",
+    "icon": "📋",
+    "content": "O SIS da UEA é o processo seletivo seriado para ingresso na Universidade do Estado do Amazonas. As inscrições para o SIS 1 acontecem ainda no 1º ano do ensino médio. Fique atento ao calendário no site da UEA para não perder o prazo.",
+    "createdAt": "2026-06-04T10:00:00.000Z"
+  },
+  {
+    "id": "tip-compare-notas-corte",
+    "title": "Compare as Notas de Corte Antes de Escolher o Curso",
+    "icon": "📊",
+    "content": "Antes de definir qual curso e universidade disputar, pesquise as notas de corte históricas do PSC (UFAM) e do SIS/Macro (UEA). Isso ajuda a avaliar suas chances reais e a decidir onde concentrar seus esforços ou se vale a pena investir em mais de um processo seletivo.",
+    "createdAt": "2026-06-03T10:00:00.000Z"
   }
 ]

@@ -8,7 +8,8 @@ export type Subject =
   | "fisica"
   | "literatura"
   | "filosofia"
-  | "sociologia";
+  | "sociologia"
+  | "vestibular";
 
 export interface SubjectInfo {
   label: string;

@@ -52,5 +52,32 @@
     "category": "Recursos",
     "url": "https://www.todamateria.com.br",
     "createdAt": "2026-04-25T12:00:00.000Z"
+  },
+  {
+    "id": "tool-enem-inep",
+    "name": "Portal ENEM (INEP)",
+    "description": "Site oficial do ENEM com informações sobre inscrições, datas, gabaritos, resultados e isenção de taxa de inscrição.",
+    "icon": "🎓",
+    "category": "Vestibular",
+    "url": "https://enem.inep.gov.br",
+    "createdAt": "2026-06-05T10:00:00.000Z"
+  },
+  {
+    "id": "tool-ufam",
+    "name": "PSC — UFAM",
+    "description": "Portal oficial da UFAM com editais, datas, locais de prova e resultados do Processo Seletivo Contínuo (PSC).",
+    "icon": "🏛️",
+    "category": "Vestibular",
+    "url": "https://www.ufam.edu.br",
+    "createdAt": "2026-06-04T10:00:00.000Z"
+  },
+  {
+    "id": "tool-uea",
+    "name": "SIS/Macro — UEA",
+    "description": "Site oficial da UEA com informações sobre o SIS (Sistema de Ingresso Seriado) e o Vestibular Macro para ingresso na universidade.",
+    "icon": "🎯",
+    "category": "Vestibular",
+    "url": "https://www.uea.edu.br",
+    "createdAt": "2026-06-03T10:00:00.000Z"
   }
 ]
