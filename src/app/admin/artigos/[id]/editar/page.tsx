@@ -48,6 +48,10 @@ export default async function EditarArtigoPage({ params }: { params: Promise<{ i
           <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">Autor <span aria-hidden="true" className="text-red-500">*</span></label>
           <input id="author" name="author" type="text" required defaultValue={article.author} className={inputClass} />
         </div>
+        <div>
+          <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 mb-1">URL da imagem</label>
+          <input id="imageUrl" name="imageUrl" type="url" defaultValue={article.imageUrl} placeholder="https://..." className={inputClass} />
+        </div>
         <div className="flex items-center gap-2">
           <input id="featured" name="featured" type="checkbox" defaultChecked={article.featured} className="h-4 w-4 rounded border-gray-300 focus:ring-2 focus:ring-blue-700" />
           <label htmlFor="featured" className="text-sm font-medium text-gray-700">Exibir como destaque na home</label>

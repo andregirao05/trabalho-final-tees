@@ -32,6 +32,7 @@ function today(): string {
 export async function createArticle(formData: FormData) {
   const title = formData.get("title") as string;
   const articles = getArticles();
+  const imageUrl = (formData.get("imageUrl") as string) || undefined;
   articles.push({
     id: newId(),
     title,
@@ -42,6 +43,7 @@ export async function createArticle(formData: FormData) {
     readTime: Number(formData.get("readTime")) || 5,
     slug: toSlug(title),
     featured: formData.get("featured") === "on",
+    ...(imageUrl ? { imageUrl } : {}),
   });
   write("articles.json", articles);
   revalidatePath("/");
@@ -55,6 +57,7 @@ export async function updateArticle(formData: FormData) {
   const idx = articles.findIndex((a) => a.id === id);
   if (idx !== -1) {
     const title = formData.get("title") as string;
+    const imageUrl = (formData.get("imageUrl") as string) || undefined;
     articles[idx] = {
       ...articles[idx],
       title,
@@ -64,6 +67,7 @@ export async function updateArticle(formData: FormData) {
       readTime: Number(formData.get("readTime")) || articles[idx].readTime,
       featured: formData.get("featured") === "on",
       slug: toSlug(title),
+      imageUrl: imageUrl ?? articles[idx].imageUrl,
     };
     write("articles.json", articles);
     revalidatePath("/");

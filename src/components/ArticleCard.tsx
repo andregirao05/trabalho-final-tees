@@ -12,10 +12,18 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <article className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
-      <div
-        className={`h-2 w-full ${subject.badge.split(" ")[0]}`}
-        aria-hidden="true"
-      />
+      {article.imageUrl ? (
+        <img
+          src={article.imageUrl}
+          alt=""
+          className="h-40 w-full object-cover"
+        />
+      ) : (
+        <div
+          className={`h-2 w-full ${subject.badge.split(" ")[0]}`}
+          aria-hidden="true"
+        />
+      )}
       <div className="p-5 flex flex-col flex-1">
         <div className="mb-3">
           <CategoryBadge subject={article.subject} />

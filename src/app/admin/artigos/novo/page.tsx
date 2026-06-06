@@ -40,6 +40,10 @@ export default function NovoArtigoPage() {
           <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">Autor <span aria-hidden="true" className="text-red-500">*</span></label>
           <input id="author" name="author" type="text" required className={inputClass} />
         </div>
+        <div>
+          <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 mb-1">URL da imagem</label>
+          <input id="imageUrl" name="imageUrl" type="url" placeholder="https://..." className={inputClass} />
+        </div>
         <div className="flex items-center gap-2">
           <input id="featured" name="featured" type="checkbox" className="h-4 w-4 rounded border-gray-300 focus:ring-2 focus:ring-blue-700" />
           <label htmlFor="featured" className="text-sm font-medium text-gray-700">Exibir como destaque na home</label>

@@ -108,5 +108,17 @@
     "readTime": 7,
     "slug": "estratificacao-social",
     "featured": false
+  },
+  {
+    "id": "12efef65-812a-4650-a8a7-7b0bc761ed8a",
+    "title": "Artigo de Teste 1",
+    "excerpt": "Esse é um teste para entender se posso criar artigos facilmente",
+    "subject": "matematica",
+    "author": "André Girão",
+    "date": "06 de jun. de 2026",
+    "readTime": 5,
+    "slug": "artigo-de-teste-1",
+    "featured": true,
+    "imageUrl": "https://conhecimentocientifico.r7.com/wp-content/uploads/2020/04/matematica-o-que-e-conceito-historia-e-importancia.jpg"
   }
 ]

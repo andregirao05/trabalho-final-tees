@@ -29,6 +29,7 @@ export interface Article {
   readTime: number;
   slug: string;
   featured?: boolean;
+  imageUrl?: string;
 }
 
 export interface Video {
