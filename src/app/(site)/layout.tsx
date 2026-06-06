@@ -3,6 +3,7 @@ import "@radix-ui/themes/styles.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SkipToContent } from "@/components/SkipToContent";
+import { AccessibilityToolbar } from "@/components/AccessibilityToolbar";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <AccessibilityToolbar />
       </div>
     </Theme>
   );
