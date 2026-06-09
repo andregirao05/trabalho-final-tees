@@ -426,7 +426,7 @@ export function AccessibilityToolbar() {
                 onChange={(v) => update("tdahMode", v)}
               />
               <Toggle
-                label="Guia de leitura (linha laranja)"
+                label="Guia de leitura"
                 checked={settings.elderlyMode}
                 onChange={(v) => update("elderlyMode", v)}
               />
