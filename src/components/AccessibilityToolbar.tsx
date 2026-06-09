@@ -9,6 +9,7 @@ interface A11ySettings {
   increasedSpacing: boolean;
   grayscale: boolean;
   tdahMode: boolean;
+  elderlyMode: boolean;
 }
 
 const DEFAULT: A11ySettings = {
@@ -18,6 +19,7 @@ const DEFAULT: A11ySettings = {
   increasedSpacing: false,
   grayscale: false,
   tdahMode: false,
+  elderlyMode: false,
 };
 
 const STORAGE_KEY = "a11y-settings";
@@ -40,6 +42,7 @@ function applySettings(s: A11ySettings) {
   html.classList.toggle("a11y-dyslexia-font", s.dyslexiaFont);
   html.classList.toggle("a11y-increased-spacing", s.increasedSpacing);
   html.classList.toggle("a11y-grayscale", s.grayscale);
+  html.classList.toggle("a11y-elderly", s.elderlyMode);
 }
 
 function Toggle({
@@ -71,6 +74,43 @@ function Toggle({
           }`}
         />
       </button>
+    </div>
+  );
+}
+
+function ElderlyOverlay() {
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onMove(e: MouseEvent) {
+      if (barRef.current) {
+        barRef.current.style.top = `${e.clientY}px`;
+        barRef.current.style.left = `${e.clientX}px`;
+      }
+    }
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return (
+    <div
+      aria-hidden="true"
+      style={{ position: "fixed", inset: 0, zIndex: 49, pointerEvents: "none" }}
+    >
+      <div
+        ref={barRef}
+        style={{
+          position: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(36rem, calc(50% - 1.5rem))",
+          top: "50vh",
+          height: "16px",
+          background: "#1d4ed8",
+          border: "5px solid rgba(0, 0, 0, 0.75)",
+          borderRadius: "9999px",
+        }}
+      />
     </div>
   );
 }
@@ -170,6 +210,7 @@ export function AccessibilityToolbar() {
 
   return (
     <>
+    {settings.elderlyMode && <ElderlyOverlay />}
     {settings.tdahMode && <TDAHOverlay />}
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
       {open && (
@@ -254,6 +295,11 @@ export function AccessibilityToolbar() {
                 label="Amigável a TDAH (faixa de foco)"
                 checked={settings.tdahMode}
                 onChange={(v) => update("tdahMode", v)}
+              />
+              <Toggle
+                label="Guia de leitura (linha laranja)"
+                checked={settings.elderlyMode}
+                onChange={(v) => update("elderlyMode", v)}
               />
             </div>
 

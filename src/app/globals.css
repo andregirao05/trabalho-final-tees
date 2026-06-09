@@ -46,6 +46,23 @@ html.a11y-grayscale.a11y-high-contrast {
   filter: grayscale(100%) contrast(1.5);
 }
 
+html.a11y-elderly {
+  filter: saturate(1.8);
+}
+
+html.a11y-elderly.a11y-high-contrast {
+  filter: saturate(1.8) contrast(1.5);
+}
+
+/* grayscale cancels saturation — keep existing grayscale behavior */
+html.a11y-elderly.a11y-grayscale {
+  filter: grayscale(100%);
+}
+
+html.a11y-elderly.a11y-grayscale.a11y-high-contrast {
+  filter: grayscale(100%) contrast(1.5);
+}
+
 html.a11y-dyslexia-font,
 html.a11y-dyslexia-font * {
   font-family: Arial, Verdana, Geneva, Tahoma, sans-serif !important;
