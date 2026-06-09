@@ -41,7 +41,7 @@ export function Header() {
               aria-label="Buscar conteúdo"
               action="/busca"
               method="GET"
-              className="hidden md:flex items-center flex-1 max-w-md"
+              className="hidden md:flex items-stretch flex-1 max-w-md"
             >
               <label htmlFor="search-desktop" className="sr-only">
                 Buscar artigos e matérias
