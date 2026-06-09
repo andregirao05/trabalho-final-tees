@@ -8,6 +8,7 @@ interface A11ySettings {
   dyslexiaFont: boolean;
   increasedSpacing: boolean;
   grayscale: boolean;
+  tdahMode: boolean;
 }
 
 const DEFAULT: A11ySettings = {
@@ -16,6 +17,7 @@ const DEFAULT: A11ySettings = {
   dyslexiaFont: false,
   increasedSpacing: false,
   grayscale: false,
+  tdahMode: false,
 };
 
 const STORAGE_KEY = "a11y-settings";
@@ -70,6 +72,39 @@ function Toggle({
         />
       </button>
     </div>
+  );
+}
+
+function TDAHOverlay() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onMove(e: MouseEvent) {
+      ref.current?.style.setProperty("--y", `${e.clientY}px`);
+    }
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden="true"
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 49,
+        pointerEvents: "none",
+        background:
+          "linear-gradient(to bottom," +
+          "rgba(0,0,0,0.6) 0px," +
+          "rgba(0,0,0,0.6) calc(var(--y, 50vh) - 90px)," +
+          "transparent calc(var(--y, 50vh) - 90px)," +
+          "transparent calc(var(--y, 50vh) + 90px)," +
+          "rgba(0,0,0,0.6) calc(var(--y, 50vh) + 90px)," +
+          "rgba(0,0,0,0.6) 100%)",
+      }}
+    />
   );
 }
 
@@ -134,6 +169,8 @@ export function AccessibilityToolbar() {
   }
 
   return (
+    <>
+    {settings.tdahMode && <TDAHOverlay />}
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
       {open && (
         <div
@@ -213,6 +250,11 @@ export function AccessibilityToolbar() {
                 checked={settings.grayscale}
                 onChange={(v) => update("grayscale", v)}
               />
+              <Toggle
+                label="Amigável a TDAH (faixa de foco)"
+                checked={settings.tdahMode}
+                onChange={(v) => update("tdahMode", v)}
+              />
             </div>
 
             {/* Reset */}
@@ -246,5 +288,6 @@ export function AccessibilityToolbar() {
         </svg>
       </button>
     </div>
+    </>
   );
 }
