@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AccessibilityToolbar } from "@/components/AccessibilityToolbar";
 
 const navLinks = [
   { href: "/admin", label: "Dashboard", icon: "🏠" },
@@ -53,6 +54,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <main className="flex-1 p-8 overflow-auto" id="conteudo-principal">
         {children}
       </main>
+      <AccessibilityToolbar />
     </div>
   );
 }
