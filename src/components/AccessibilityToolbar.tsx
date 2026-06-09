@@ -11,6 +11,7 @@ interface A11ySettings {
   tdahMode: boolean;
   elderlyMode: boolean;
   lowVisionMode: boolean;
+  magnifierMode: boolean;
 }
 
 const DEFAULT: A11ySettings = {
@@ -22,6 +23,7 @@ const DEFAULT: A11ySettings = {
   tdahMode: false,
   elderlyMode: false,
   lowVisionMode: false,
+  magnifierMode: false,
 };
 
 const STORAGE_KEY = "a11y-settings";
@@ -77,6 +79,79 @@ function Toggle({
           }`}
         />
       </button>
+    </div>
+  );
+}
+
+const TEXT_TAGS = new Set(["P","H1","H2","H3","H4","H5","H6","LI","SPAN","A","TD","LABEL","BUTTON","STRONG","EM","TIME","FIGCAPTION"]);
+
+function TextMagnifierOverlay() {
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    function onMove(e: MouseEvent) {
+      if (boxRef.current) {
+        const x = Math.min(e.clientX + 20, window.innerWidth - 540);
+        const y = Math.max(e.clientY - 140, 8);
+        boxRef.current.style.left = `${x}px`;
+        boxRef.current.style.top = `${y}px`;
+      }
+
+      // caretRangeFromPoint bypasses CSS overlays (stretched links etc.)
+      const doc = document as Document & {
+        caretRangeFromPoint?: (x: number, y: number) => Range | null;
+        caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node } | null;
+      };
+      const range = doc.caretRangeFromPoint?.(e.clientX, e.clientY);
+      const container = range?.startContainer
+        ?? doc.caretPositionFromPoint?.(e.clientX, e.clientY)?.offsetNode
+        ?? null;
+
+      if (!container) { setText(""); return; }
+
+      let node: Node | null = container;
+      while (node && node.nodeType !== Node.ELEMENT_NODE) node = node.parentNode;
+
+      let target: Element | null = node as Element | null;
+      while (target) {
+        if (TEXT_TAGS.has(target.tagName)) {
+          const t = (target.textContent ?? "").trim();
+          if (t.length >= 4) { setText(t); return; }
+        }
+        target = target.parentElement;
+      }
+      setText("");
+    }
+
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return (
+    <div
+      ref={boxRef}
+      aria-hidden="true"
+      style={{
+        position: "fixed",
+        zIndex: 49,
+        pointerEvents: "none",
+        display: text ? "block" : "none",
+        width: "auto",
+        maxWidth: "min(520px, calc(100vw - 40px))",
+        padding: "12px 16px",
+        background: "#fff",
+        border: "2px solid #1d4ed8",
+        borderRadius: "10px",
+        boxShadow: "0 4px 16px rgba(0,0,0,0.18)",
+        fontSize: "1.4rem",
+        lineHeight: 1.45,
+        color: "#111827",
+        top: "50px",
+        left: "50px",
+      }}
+    >
+      {text}
     </div>
   );
 }
@@ -262,6 +337,7 @@ export function AccessibilityToolbar() {
 
   return (
     <>
+    {settings.magnifierMode && <TextMagnifierOverlay />}
     {settings.lowVisionMode && <LowVisionOverlay />}
     {settings.elderlyMode && <ElderlyOverlay />}
     {settings.tdahMode && <TDAHOverlay />}
@@ -358,6 +434,11 @@ export function AccessibilityToolbar() {
                 label="Baixa visão (cursor ampliado)"
                 checked={settings.lowVisionMode}
                 onChange={(v) => update("lowVisionMode", v)}
+              />
+              <Toggle
+                label="Lupa de texto"
+                checked={settings.magnifierMode}
+                onChange={(v) => update("magnifierMode", v)}
               />
             </div>
 
