@@ -32,7 +32,7 @@ export function Header() {
               className="flex items-center gap-2 text-white font-bold text-xl flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-white rounded-sm"
             >
               <span aria-hidden="true" className="text-2xl">🎓</span>
-              <span>EduBrasil</span>
+              <span>Portal Igarapé</span>
             </Link>
 
             {/* Search — desktop */}

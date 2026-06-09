@@ -4,7 +4,7 @@ import { getArticles, getVideos, getTips, getTools } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = { title: "Admin — EduBrasil" };
+export const metadata: Metadata = { title: "Admin — Portal Igarapé" };
 
 const sections = [
   { label: "Artigos", icon: "📝", href: "/admin/artigos", color: "bg-blue-50 border-blue-200 text-blue-700" },
@@ -24,7 +24,7 @@ export default function AdminPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-gray-900 mb-2">Painel de Administração</h1>
-      <p className="text-gray-600 mb-8 text-sm">Gerencie o conteúdo do site EduBrasil.</p>
+      <p className="text-gray-600 mb-8 text-sm">Gerencie o conteúdo do site Portal Igarapé.</p>
 
       <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10" role="list">
         {sections.map((s) => (

@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "Conheça o EduBrasil, uma plataforma educativa gratuita com artigos, vídeo aulas e dicas de vestibular para estudantes do ensino médio.",
+  description: "Conheça o Portal Igarapé, uma plataforma educativa gratuita e acessível voltada para estudantes da região amazônica que se preparam para o vestibular.",
 };
 
 const values = [
-  { icon: "📖", title: "Gratuidade", description: "Todo o conteúdo é 100% gratuito e acessível para qualquer estudante, sem cadastro obrigatório." },
-  { icon: "✅", title: "Qualidade", description: "Conteúdo revisado por professores especializados, alinhado aos principais vestibulares e ao ENEM." },
-  { icon: "♿", title: "Acessibilidade", description: "Desenvolvido seguindo os padrões WCAG 2.1 AA para garantir acesso a todos os usuários." },
-  { icon: "📱", title: "Responsividade", description: "Acesse do celular, tablet ou computador com a mesma experiência de qualidade." },
+  { icon: "📖", title: "Gratuidade", description: "Todo o conteúdo é 100% gratuito e acessível para qualquer estudante da Amazônia, sem cadastro obrigatório." },
+  { icon: "✅", title: "Regionalidade", description: "Conteúdo voltado para os vestibulares da região: ENEM, PSC UFAM, SIS UEA e Vestibular Macro UEA." },
+  { icon: "♿", title: "Acessibilidade", description: "Desenvolvido seguindo os padrões WCAG 2.1 AA, com ferramentas como lupa de texto, guia de leitura e modo TDAH." },
+  { icon: "📱", title: "Inclusão Digital", description: "Interface leve e responsiva para funcionar bem mesmo em conexões limitadas, do celular ao computador." },
 ];
 
 export default function SobrePage() {
@@ -18,37 +18,41 @@ export default function SobrePage() {
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       <div className="bg-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-3xl font-bold mb-2">Sobre o EduBrasil</h1>
+          <h1 className="text-3xl font-bold mb-2">Sobre o Portal Igarapé</h1>
           <p className="text-blue-100">
-            Nossa missão é democratizar o acesso ao conhecimento de qualidade
-            para estudantes de todo o Brasil.
+            Nossa missão é garantir que estudantes da região amazônica tenham
+            acesso a conteúdo educacional de qualidade, com inclusão digital
+            e acessibilidade como pilares fundamentais.
           </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
         {/* About */}
-        <section aria-label="O que é o EduBrasil">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">O que é o EduBrasil?</h2>
+        <section aria-label="O que é o Portal Igarapé">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">O que é o Portal Igarapé?</h2>
           <div className="bg-white rounded-lg border border-gray-200 p-6 text-gray-600 space-y-4 leading-relaxed text-sm">
             <p>
-              O <strong className="text-gray-900">EduBrasil</strong> é uma plataforma educativa gratuita voltada
-              para estudantes do ensino médio e vestibulandos. Nosso objetivo é
+              O <strong className="text-gray-900">Portal Igarapé</strong> é uma plataforma educativa gratuita
+              focada em estudantes da <strong className="text-gray-900">região amazônica</strong> que se preparam
+              para o ENEM, PSC da UFAM, SIS e Vestibular Macro da UEA. Nosso objetivo é
               oferecer conteúdo de alta qualidade — artigos, vídeo aulas, dicas
               de vestibular e ferramentas de estudo — de forma acessível, clara
               e sem barreiras.
             </p>
             <p>
-              Acreditamos que a educação de qualidade deve ser um direito de
-              todos, independentemente de localização geográfica ou condição
-              socioeconômica. Por isso, todo o conteúdo do EduBrasil é e sempre
-              será gratuito.
+              Sabemos que muitos estudantes do Amazonas enfrentam desafios únicos:
+              distâncias geográficas, conectividade limitada e falta de materiais
+              preparatórios regionalizados. Por isso, o Portal Igarapé nasce com
+              o compromisso de ser gratuito, leve e verdadeiramente inclusivo —
+              para que a origem não defina o destino de nenhum estudante.
             </p>
             <p>
               Nossa plataforma foi desenvolvida seguindo os padrões de
               acessibilidade digital <strong className="text-gray-900">WCAG 2.1 nível AA</strong>,
-              garantindo que estudantes com deficiência visual, motora ou
-              auditiva também possam aproveitar todo o conteúdo.
+              com ferramentas de acessibilidade integradas — modo de alto contraste,
+              lupa de texto, guia de leitura e suporte a TDAH — para que estudantes
+              com qualquer necessidade possam aproveitar todo o conteúdo.
             </p>
           </div>
         </section>
@@ -78,7 +82,7 @@ export default function SobrePage() {
           </h2>
           <div className="bg-white rounded-lg border border-gray-200 p-6 text-sm text-gray-600 space-y-3 leading-relaxed">
             <p>
-              O EduBrasil está comprometido em garantir a acessibilidade digital
+              O Portal Igarapé está comprometido em garantir a acessibilidade digital
               para pessoas com deficiência. Buscamos estar em conformidade com
               as{" "}
               <strong className="text-gray-900">

@@ -10,7 +10,7 @@ import type { Subject } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "EduBrasil — Aprenda qualquer matéria, quando quiser",
+  title: "Portal Igarapé — Aprenda qualquer matéria, quando quiser",
 };
 
 const subjectOrder: Subject[] = [

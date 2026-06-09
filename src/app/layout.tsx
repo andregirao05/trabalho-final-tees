@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "EduBrasil — Aprenda qualquer matéria, quando quiser",
-    template: "%s | EduBrasil",
+    default: "Portal Igarapé — Aprenda qualquer matéria, quando quiser",
+    template: "%s | Portal Igarapé",
   },
   description:
     "Conteúdo educativo gratuito para estudantes do ensino médio e vestibulandos. Artigos, vídeo aulas, dicas de vestibular e ferramentas de estudo.",

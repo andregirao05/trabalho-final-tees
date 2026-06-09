@@ -28,7 +28,7 @@ export function Footer() {
               className="flex items-center gap-2 text-white font-bold text-xl mb-3 focus:outline-none focus:ring-2 focus:ring-white rounded-sm w-fit"
             >
               <span aria-hidden="true">🎓</span>
-              <span>EduBrasil</span>
+              <span>Portal Igarapé</span>
             </Link>
             <p className="text-sm leading-relaxed">
               Conteúdo educativo gratuito para estudantes do ensino médio e
@@ -77,7 +77,7 @@ export function Footer() {
 
         <div className="mt-10 pt-6 border-t border-gray-700 text-xs text-gray-500 text-center">
           <p>
-            &copy; {new Date().getFullYear()} EduBrasil. Conteúdo educativo gratuito.
+            &copy; {new Date().getFullYear()} Portal Igarapé. Conteúdo educativo gratuito.
           </p>
         </div>
       </div>
