@@ -237,8 +237,12 @@ export function AccessibilityToolbar() {
         aria-label="Abrir ferramentas de acessibilidade"
         className="w-12 h-12 bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 transition-colors"
       >
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6" aria-hidden="true">
-          <path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 5H4a1 1 0 0 0 0 2h3.5l-1.4 5.6A1 1 0 0 0 7 16h2l1 5h4l1-5h2a1 1 0 0 0 .9-1.4L16.5 9H20a1 1 0 0 0 0-2Z" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-6 h-6" aria-hidden="true">
+          <circle cx="12" cy="4" r="2" />
+          <line x1="12" y1="6" x2="12" y2="15" />
+          <line x1="3" y1="9" x2="21" y2="9" />
+          <line x1="12" y1="15" x2="7" y2="22" />
+          <line x1="12" y1="15" x2="17" y2="22" />
         </svg>
       </button>
     </div>
