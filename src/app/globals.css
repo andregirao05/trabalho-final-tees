@@ -63,6 +63,17 @@ html.a11y-elderly.a11y-grayscale.a11y-high-contrast {
   filter: grayscale(100%) contrast(1.5);
 }
 
+html.a11y-low-vision :focus-visible {
+  outline: 5px solid #1d4ed8;
+  outline-offset: 4px;
+}
+
+html.a11y-low-vision a,
+html.a11y-low-vision button {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 html.a11y-dyslexia-font,
 html.a11y-dyslexia-font * {
   font-family: Arial, Verdana, Geneva, Tahoma, sans-serif !important;

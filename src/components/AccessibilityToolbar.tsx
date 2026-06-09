@@ -10,6 +10,7 @@ interface A11ySettings {
   grayscale: boolean;
   tdahMode: boolean;
   elderlyMode: boolean;
+  lowVisionMode: boolean;
 }
 
 const DEFAULT: A11ySettings = {
@@ -20,6 +21,7 @@ const DEFAULT: A11ySettings = {
   grayscale: false,
   tdahMode: false,
   elderlyMode: false,
+  lowVisionMode: false,
 };
 
 const STORAGE_KEY = "a11y-settings";
@@ -43,6 +45,7 @@ function applySettings(s: A11ySettings) {
   html.classList.toggle("a11y-increased-spacing", s.increasedSpacing);
   html.classList.toggle("a11y-grayscale", s.grayscale);
   html.classList.toggle("a11y-elderly", s.elderlyMode);
+  html.classList.toggle("a11y-low-vision", s.lowVisionMode);
 }
 
 function Toggle({
@@ -74,6 +77,55 @@ function Toggle({
           }`}
         />
       </button>
+    </div>
+  );
+}
+
+function LowVisionOverlay() {
+  const ringRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onMove(e: MouseEvent) {
+      if (ringRef.current) {
+        ringRef.current.style.left = `${e.clientX}px`;
+        ringRef.current.style.top = `${e.clientY}px`;
+      }
+    }
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  return (
+    <div
+      ref={ringRef}
+      aria-hidden="true"
+      style={{
+        position: "fixed",
+        zIndex: 49,
+        pointerEvents: "none",
+        width: "64px",
+        height: "64px",
+        borderRadius: "50%",
+        border: "3px solid #1d4ed8",
+        outline: "2px solid rgba(255,255,255,0.9)",
+        outlineOffset: "2px",
+        transform: "translate(-50%, -50%)",
+        top: "50vh",
+        left: "50vw",
+      }}
+    >
+      <div style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "10px",
+        height: "10px",
+        borderRadius: "50%",
+        background: "#1d4ed8",
+        outline: "2px solid rgba(255,255,255,0.9)",
+        outlineOffset: "1px",
+      }} />
     </div>
   );
 }
@@ -210,6 +262,7 @@ export function AccessibilityToolbar() {
 
   return (
     <>
+    {settings.lowVisionMode && <LowVisionOverlay />}
     {settings.elderlyMode && <ElderlyOverlay />}
     {settings.tdahMode && <TDAHOverlay />}
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
@@ -300,6 +353,11 @@ export function AccessibilityToolbar() {
                 label="Guia de leitura (linha laranja)"
                 checked={settings.elderlyMode}
                 onChange={(v) => update("elderlyMode", v)}
+              />
+              <Toggle
+                label="Baixa visão (cursor ampliado)"
+                checked={settings.lowVisionMode}
+                onChange={(v) => update("lowVisionMode", v)}
               />
             </div>
 
