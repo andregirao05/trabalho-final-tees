@@ -15,6 +15,9 @@ const subjects = Object.entries(SUBJECTS) as [Subject, typeof SUBJECTS[Subject]]
 
 export default function ArtigosPage() {
   const articles = getArticles();
+  const subjectsWithArticles = subjects.filter(([key]) =>
+    articles.some((a) => a.subject === key)
+  );
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       {/* Page header */}
@@ -35,7 +38,7 @@ export default function ArtigosPage() {
             Filtrar por matéria
           </h2>
           <ul className="flex flex-wrap gap-2" role="list">
-            {subjects.map(([key, info]) => (
+            {subjectsWithArticles.map(([key, info]) => (
               <li key={key}>
                 <a
                   href={`#${key}`}

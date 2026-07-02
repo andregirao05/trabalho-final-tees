@@ -15,6 +15,9 @@ const subjects = Object.entries(SUBJECTS) as [Subject, typeof SUBJECTS[Subject]]
 
 export default function VideoAulasPage() {
   const videos = getVideos();
+  const subjectsWithVideos = subjects.filter(([key]) =>
+    videos.some((v) => v.subject === key)
+  );
   return (
     <main id="conteudo-principal" className="flex-1 bg-gray-50">
       <div className="bg-white border-b border-gray-200">
@@ -34,7 +37,7 @@ export default function VideoAulasPage() {
             Filtrar por matéria
           </h2>
           <ul className="flex flex-wrap gap-2" role="list">
-            {subjects.map(([key, info]) => (
+            {subjectsWithVideos.map(([key, info]) => (
               <li key={key}>
                 <a
                   href={`#videos-${key}`}
