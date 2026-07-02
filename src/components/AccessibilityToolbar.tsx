@@ -134,7 +134,7 @@ function TextMagnifierOverlay() {
       aria-hidden="true"
       style={{
         position: "fixed",
-        zIndex: 49,
+        zIndex: 51,
         pointerEvents: "none",
         display: text ? "block" : "none",
         width: "auto",
@@ -176,7 +176,7 @@ function LowVisionOverlay() {
       aria-hidden="true"
       style={{
         position: "fixed",
-        zIndex: 49,
+        zIndex: 51,
         pointerEvents: "none",
         width: "64px",
         height: "64px",
@@ -222,7 +222,7 @@ function ElderlyOverlay() {
   return (
     <div
       aria-hidden="true"
-      style={{ position: "fixed", inset: 0, zIndex: 49, pointerEvents: "none" }}
+      style={{ position: "fixed", inset: 0, zIndex: 51, pointerEvents: "none" }}
     >
       <div
         ref={barRef}
@@ -260,7 +260,7 @@ function TDAHOverlay() {
       style={{
         position: "fixed",
         inset: 0,
-        zIndex: 49,
+        zIndex: 51,
         pointerEvents: "none",
         background:
           "linear-gradient(to bottom," +
