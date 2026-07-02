@@ -462,7 +462,7 @@ export function AccessibilityToolbar() {
         aria-expanded={open}
         aria-controls="a11y-panel"
         aria-label="Abrir ferramentas de acessibilidade"
-        className="w-12 h-12 bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 transition-colors"
+        className="w-14 h-14 bg-white text-blue-700 rounded-full shadow-[0_4px_14px_rgba(0,0,0,0.35)] border-4 border-blue-700 flex items-center justify-center hover:bg-blue-50 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 transition-all"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-6 h-6" aria-hidden="true">
           <circle cx="12" cy="4" r="2" />
